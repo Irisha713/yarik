@@ -11,7 +11,3 @@ def get_mask_account(number_account: int) -> str:
     """Выводит змаскированый счёт аккаунта пользователя"""
     result = '**' + str(number_account)[-4:]
     return result
-
-
-print(get_mask_card_number(7000792289606361))
-print(get_mask_account(73654108430135874305))
