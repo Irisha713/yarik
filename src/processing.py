@@ -22,5 +22,5 @@ def sort_by_date(list_of_dictionaries: list, reverse_state: bool = False) -> lis
         """Преобразует строку даты"""
         return datetime.strptime(dictionary["date"], "%Y-%m-%dT%H:%M:%S.%f")
 
-    new_lst = sorted(list_of_dictionaries, key=sort, reverse=not reverse_state)
-    return new_lst
+    new_list = sorted(list_of_dictionaries, key=sort, reverse=not reverse_state)
+    return new_list
