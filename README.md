@@ -42,3 +42,11 @@ executed_transactions = filter_by_state(transactions)
 # Пример использования sort_by_date
 sorted_transactions = sort_by_date(transactions)
 ```
+
+## Тестирование
+
+В нашем проекте используется тестирование для обеспечения надёжности и корректности работы. Был использован фреймвор pytest.
+Все написанные тесты находятся в папке tests, там же можно найти файл со всеми фикстурами в модуле "conftest.py"
+
+Ниже приведена метрика, которая показывает, какой процент кода программы был протестирован.
+![](file:///C:/Users/Admin/Desktop/singularity%20(скрины)/coverage.PNG)
