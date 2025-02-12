@@ -48,4 +48,11 @@ sorted_transactions = sort_by_date(transactions)
 В нашем проекте используется тестирование для обеспечения надёжности и корректности работы. Был использован фреймвор pytest.
 Все написанные тесты находятся в папке tests, там же можно найти файл со всеми фикстурами в модуле "conftest.py"
 
-Также вы можете ознакомиться с [метрикой](file:///C:/Users/Admin/Desktop/singularity%20(скрины)/coverage.PNG), которая показывает, какой процент кода программы был протестирован.
+```
+File	        statements  missing  excluded   coverage
+src\__init__.py	    0	        0       0         100%
+src\masks.py	    19	        0       0         100%
+src\processing.py   17	        2       0         88%
+src\widget.py	    20	        0       0         100%
+Total	            56	        2       0         96%
+```
