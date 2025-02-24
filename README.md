@@ -1,4 +1,4 @@
-# Домашняя работа 10.1
+# Домашняя работа 10.2
 
 ## Описание:
 
@@ -41,4 +41,18 @@ executed_transactions = filter_by_state(transactions)
 
 # Пример использования sort_by_date
 sorted_transactions = sort_by_date(transactions)
+```
+
+## Тестирование
+
+В нашем проекте используется тестирование для обеспечения надёжности и корректности работы. Был использован фреймвор pytest.
+Все написанные тесты находятся в папке tests, там же можно найти файл со всеми фикстурами в модуле "conftest.py"
+
+```
+File	        statements  missing  excluded   coverage
+src\__init__.py	    0	        0       0         100%
+src\masks.py	    19	        0       0         100%
+src\processing.py   17	        2       0         88%
+src\widget.py	    20	        0       0         100%
+Total	            56	        2       0         96%
 ```
