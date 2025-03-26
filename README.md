@@ -58,9 +58,10 @@ for _ in range(2):
 ```
 File	        statements  missing  excluded   coverage
 src\__init__.py	    0	        0       0         100%
+src\decorators.py   20          3       0         85%
 src\generators.py   9           0       0         100%
 src\masks.py	    19	        0       0         100%
 src\processing.py   17	        2       0         88%
 src\widget.py	    20	        0       0         100%
-Total	            65	        2       0         97%
+Total	            85	        5       0         94%
 ```
