@@ -19,7 +19,7 @@ def test_transactions():
 
 def test_transactions_exception():
     mock_error = mock_open()
-    mock_error.side_effect = Exception
+    mock_error.side_effect = FileNotFoundError
 
     with patch("builtins.open", mock_error):
         result = transactions("non_existent.json")

@@ -48,7 +48,7 @@ def test_get_amount_from_usd(mock_request):
 
 @patch("requests.request")
 def test_get_amount_exception(mock_request):
-    mock_request.return_value.status_code = 401
+    mock_request.return_value.status_code = 500
 
     transaction = {
         "id": 441945886,
@@ -66,5 +66,5 @@ def test_get_amount_exception(mock_request):
         "to": "Счет 64686473678894779589"
     }
 
-    assert get_amount(transaction) == []
+    assert get_amount(transaction) == None
     mock_request.assert_called_once()

@@ -12,7 +12,7 @@ def get_amount(transaction):
     code = transaction.get('operationAmount').get('currency').get('code')
 
     if code == 'RUB':
-        return float(amount)
+        return amount
 
     url = f"https://api.apilayer.com/exchangerates_data/convert?to={'RUB'}&from={code}&amount={amount}"
 
@@ -27,5 +27,3 @@ def get_amount(transaction):
     if status_code == 200:
         result = response.json()
         return result['result']
-    else:
-        return []

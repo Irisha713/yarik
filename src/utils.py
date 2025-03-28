@@ -10,5 +10,5 @@ def transactions(path):
             return data
         else:
             return []
-    except Exception:
+    except FileNotFoundError or json.JSONDecodeError:
         return []
