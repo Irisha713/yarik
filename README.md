@@ -1,4 +1,4 @@
-# Домашняя работа 11.1
+# Домашняя работа 13.1
 
 ## Описание:
 
@@ -33,6 +33,8 @@ python manage.py runserver
 from src.processing import filter_by_state, sort_by_date
 from src.generators import filter_by_currency
 from tests.conftest import transactions
+import pandas as pd
+import csv
 
 # Пример использования filter_by_state
 transactions1 = [
@@ -48,6 +50,26 @@ sorted_transactions = sort_by_date(transactions1)
 usd_transactions = filter_by_currency(transactions, "USD")
 for _ in range(2):
     print(next(usd_transactions))
+# Пример использования read_transactions_from_csv
+def read_transactions_from_csv(file_path: str) -> list[dict]:
+    transactions = []
+    """происходит считывание финансовых операций"""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            reader = csv.DictReader(file, delimiter= ';')
+            for row in reader:
+                transactions.append(dict(row))
+        return transactions
+    except FileNotFoundError:
+        raise ModuleNotFoundError(f"Файл не найден")
+    except Exception as e:
+        raise Exception(f"Ошибка")
+# Пример использования read_transactions_from_excel
+def read_transactions_from_excel(path):
+    """роисходит считывание финансовых операций"""
+    reader = pd.read_excel(path)
+    transactions = reader.to_dict(orient='records')
+    return transactions 
 ```
 
 ## Тестирование
