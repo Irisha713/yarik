@@ -1,7 +1,6 @@
-import pandas as pd
 import csv
-from typing import Dict, List
-from tests.conftest import transactions
+
+import pandas as pd
 
 
 def read_transactions_from_csv(file_path: str) -> list[dict]:
@@ -13,8 +12,6 @@ def read_transactions_from_csv(file_path: str) -> list[dict]:
             for row in reader:
                 transactions.append(dict(row))
         return transactions
-    except FileNotFoundError:
-        raise ModuleNotFoundError(f"Файл не найден")
     except Exception as e:
         raise Exception(f"Ошибка")
 

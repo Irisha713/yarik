@@ -1,6 +1,6 @@
-from src.external_api import get_amount
-
 from unittest.mock import patch
+
+from src.external_api import get_amount
 
 
 def test_get_amount():

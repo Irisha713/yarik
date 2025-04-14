@@ -1,5 +1,6 @@
 from src.decorators import log
 
+
 def test_my_function(capsys):
     @log()
     def my_function(x, y):
