@@ -1,4 +1,5 @@
-from src.widget import mask_account_card, get_date
+from src.widget import get_date, mask_account_card
+
 
 def test_mask_account_card(cards_and_accounts):
     assert mask_account_card(cards_and_accounts[0]) == 'Maestro 1596 83** **** 5199'
