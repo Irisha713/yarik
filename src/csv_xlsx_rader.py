@@ -12,7 +12,7 @@ def read_transactions_from_csv(file_path: str) -> list[dict]:
             for row in reader:
                 transactions.append(dict(row))
         return transactions
-    except Exception as e:
+    except Exception:
         raise Exception(f"Ошибка")
 
 def read_transactions_from_excel(path):

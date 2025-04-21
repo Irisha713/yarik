@@ -22,7 +22,7 @@ def get_date(date: str) -> Any:
     try:
         if date == '':
             return ''
-        dt = datetime.strptime(date, "%Y-%m-%dT%H:%M:%S.%f")
-        return dt.strftime("%d.%m.%Y")
+        result = date[8:10] + "." + date[5:7] + "." + date[0:4]
+        return result
     except ValueError:
         return 'Некорректный ввод'
