@@ -7,8 +7,8 @@ from src.csv_xlsx_rader import *
 
 def main():
     while True:
-        print(f"""Привет! Добро пожаловать в программу работы 
-с банковскими транзакциями. 
+        print("""Привет! Добро пожаловать в программу работы
+с банковскими транзакциями.
 Выберите необходимый пункт меню:
 1. Получить информацию о транзакциях из JSON-файла
 2. Получить информацию о транзакциях из CSV-файла
@@ -30,7 +30,7 @@ def main():
             print("Некорректный ввод!")
 
     while True:
-        print(f"""Введите статус, по которому необходимо выполнить фильтрацию. 
+        print("""Введите статус, по которому необходимо выполнить фильтрацию.
 Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING""")
         user_input = input()
         if user_input.upper() == 'EXECUTED':
@@ -53,22 +53,21 @@ def main():
         if user_file == '1':
             if reverse_filter == 'по возрастанию':
                 date_filter = sorted(state_filter, key=lambda x: datetime.strptime(x["date"],
-                                    "%Y-%m-%dT%H:%M:%S.%f"))
+                                                                                   "%Y-%m-%dT%H:%M:%S.%f"))
                 state_filter = date_filter
             elif reverse_filter == 'по убыванию':
                 date_filter = sorted(state_filter, key=lambda x: datetime.strptime(x["date"],
-                                    "%Y-%m-%dT%H:%M:%S.%f"), reverse=True)
+                                                                                   "%Y-%m-%dT%H:%M:%S.%f"), reverse=True)
                 state_filter = date_filter
         if user_file == '2' or user_file == '3':
             if reverse_filter == 'по возрастанию':
                 date_filter = sorted(state_filter, key=lambda x: datetime.strptime(x["date"],
-                                    "%Y-%m-%dT%H:%M:%SZ"))
+                                                                                   "%Y-%m-%dT%H:%M:%SZ"))
                 state_filter = date_filter
             elif reverse_filter == 'по убыванию':
                 date_filter = sorted(state_filter, key=lambda x: datetime.strptime(x["date"],
-                                    "%Y-%m-%dT%H:%M:%SZ"), reverse=True)
+                                                                                   "%Y-%m-%dT%H:%M:%SZ"), reverse=True)
                 state_filter = date_filter
-
 
     rub_filter = input("Выводить только рублевые тразакции? Да/Нет ").title()
     if rub_filter == 'Да':
@@ -111,6 +110,7 @@ def main():
 
     else:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
+
 
 if __name__ == "__main__":
     main()
