@@ -1,4 +1,4 @@
-def log(filename = None):
+def log(filename=None):
     """автоматически логирует начало и конец выполнения функции,
     а также ее результаты или возникшие ошибки"""
     def my_function(func):

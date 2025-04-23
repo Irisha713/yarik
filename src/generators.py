@@ -17,5 +17,5 @@ XXXX XXXX XXXX XXXX
 X
  — цифра номера карты."""
     for num in range(first_number, last_number+1):
-        card = f"{num:016d}" #0000000000000013
+        card = f"{num:016d}"
         yield ' '.join([card[i:i+4] for i in range(0, 16, 4)])

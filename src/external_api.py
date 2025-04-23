@@ -7,6 +7,7 @@ load_dotenv()
 
 api_key = os.getenv("API_TOKEN")
 
+
 def get_amount(transaction):
     """принимает на вход транзакцию и возвращает сумму транзакции в рублях"""
     amount = float(transaction.get('operationAmount').get('amount'))

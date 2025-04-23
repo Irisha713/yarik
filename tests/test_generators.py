@@ -74,10 +74,11 @@ def test_filter_by_currency_rub(transactions):
         }
     ]
     rub_transactions = filter_by_currency(transactions, "RUB")
-    result =[]
+    result = []
     for _ in range(2):
         result.append(next(rub_transactions))
     assert result == expected_result
+
 
 def test_transactions_description(transactions):
     expected_result = """Перевод организации

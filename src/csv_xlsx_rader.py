@@ -8,12 +8,13 @@ def read_transactions_from_csv(file_path: str) -> list[dict]:
     """происходит считывание финансовых операций"""
     try:
         with open(file_path, 'r', encoding='utf-8') as file:
-            reader = csv.DictReader(file, delimiter= ';')
+            reader = csv.DictReader(file, delimiter=';')
             for row in reader:
                 transactions.append(dict(row))
         return transactions
-    except Exception as e:
-        raise Exception(f"Ошибка")
+    except Exception:
+        raise Exception("Ошибка")
+
 
 def read_transactions_from_excel(path):
     """роисходит считывание финансовых операций"""

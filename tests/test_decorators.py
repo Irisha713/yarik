@@ -9,6 +9,7 @@ def test_my_function(capsys):
     captured = capsys.readouterr()
     assert captured.out == "my_function ok\n"
 
+
 def test_my_function1(capsys):
     @log()
     def my_function(x, y):
@@ -16,6 +17,7 @@ def test_my_function1(capsys):
     my_function(1, '2')
     captured = capsys.readouterr()
     assert captured.out == "my_function error: TypeError. Inputs: (1, '2'), {}\n"
+
 
 def test_my_function2():
     @log(filename="tests/mylog.txt")
